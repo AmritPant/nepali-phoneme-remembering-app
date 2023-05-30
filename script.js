@@ -29,7 +29,16 @@ generateButton.addEventListener("click", () => {
     generateRandomLetter();
 } else if (state === 1) {
     generateRandomLetter();
-  }
+  } else if (state === 2) {
+    generateRandomLetter();
+    
+    state = 1;
+    sectionTable.style.display = "none";
+    showButton.textContent = "show";
+    placePara.textContent = "स्थानका आघारमा: ";
+    tryPara.textContent = "प्र्यतनका आघारम: ";
+    vibrationPara.textContent = "घोषत्वका आघारम: ";
+    powerPara.textContent = "पारणत्वका आघारम: ";}
 });
 
 showButton.addEventListener("click", () => {
