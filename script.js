@@ -15,20 +15,20 @@ let state = 0; //  0 -> Normal State
 // 2 -> shown and generated
 let randomValue;
 
-generateButton.addEventListener("click", () => {
-  if (state === 0) {
-    randomValue = Math.trunc(Math.random() * 29);
-    console.log(randomValue);
+const generateRandomLetter = function() {
+     randomValue = Math.trunc(Math.random() * 29);
     const letter = phonemeArr[randomValue]?.letter;
     state = 1;
     headingSecondary.textContent = letter;
-    generateButton.innerHTML = "Cancel";
+    generateButton.innerHTML = "New Letter";
     showButton.style.display = "inline";
-  } else if (state === 1) {
-    headingSecondary.textContent = "";
-    generateButton.innerHTML = "Generate";
-    state = 0;
-    showButton.style.display = "none";
+}
+
+generateButton.addEventListener("click", () => {
+  if (state === 0) {
+    generateRandomLetter();
+} else if (state === 1) {
+    generateRandomLetter();
   }
 });
 
